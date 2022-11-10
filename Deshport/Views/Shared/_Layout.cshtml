@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Deshport</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Deshport.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Deshport.styles.css" asp-append-version="true" />   
 </head>
 <body>
     <header>
@@ -22,11 +22,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Main" asp-action="Index">Main</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Main" asp-action="Privacy">Privacy</a>
-                        </li>
+                        
                     </ul>
+                    
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Login">Login</a>
                 </div>
+                
+                
+                
             </div>
         </nav>
     </header>
@@ -41,6 +44,7 @@
             &copy; 2022 - Deshport - <a asp-area="" asp-controller="Main" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

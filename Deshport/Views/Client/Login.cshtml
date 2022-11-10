@@ -1,0 +1,23 @@
+﻿
+@model Deshport.Domain.ViewModel.Client.LoginView
+
+<div class="main_login_form">
+    <div class="card-header">
+        <h3 class="mb-0 text-center ParagraphHome">Вход в аккаунт</h3>                            
+    </div>
+    <div class="card-body">
+        <form autocomplete="on" method="post" asp-controller="Client" asp-action="Login">
+           <div asp-validation-summary="All" style="font-size:15px; class="text-danger text-center"></div>
+           <div class="form-group">
+                <input asp-for="Mail" placeholder="email" class="form-control textbox-dg font-weight-bold text-center" type="email">                                   
+           </div>
+           <div class="form-group">
+               <input asp-for="Password" placeholder="surname" class="form-control textbox-dg font-weight-bold text-center" type="password">                                   
+           </div>                               
+           <div class="text-center"> 
+               <button class="btn btn-success  float-right m-1">Войти</button>
+           </div>
+           <a asp-controller="Client" asp-action="Register" class="float-end nav-link float-right">Регистрация</a>
+        </form>                        
+    </div>                   
+</div>
