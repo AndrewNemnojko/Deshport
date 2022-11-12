@@ -8,10 +8,10 @@ using System.Security.Claims;
 
 namespace Deshport.Controllers
 {
-    public class ClientController : Controller
+    public class AuthController : Controller
     {
         private readonly IClientService clientService;
-        public ClientController(IClientService clientService)
+        public AuthController(IClientService clientService)
         {
             this.clientService = clientService;
         }

@@ -26,14 +26,17 @@
                     </ul>
                     
                     
+                     @if(!User.Identity.IsAuthenticated){
+                        <a class="accountbtn text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+                     }                                       
                     
-                        <a class="accountbtn text-dark" asp-area="" asp-controller="Client" asp-action="Login">Login</a>
-                                                              
-                    
-                                          
-                        <form method="post" asp-controller="Client" asp-action="Logout" >
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Auth" asp-action="Logout" >
                             <input class="accountbtn border-0"  type="submit" value="Logout" />
                         </form>
+                    }                    
+                    
                     
                 </div>
                 
