@@ -25,7 +25,16 @@
                         
                     </ul>
                     
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Login">Login</a>
+                    
+                    
+                        <a class="accountbtn text-dark" asp-area="" asp-controller="Client" asp-action="Login">Login</a>
+                                                              
+                    
+                                          
+                        <form method="post" asp-controller="Client" asp-action="Logout" >
+                            <input class="accountbtn border-0"  type="submit" value="Logout" />
+                        </form>
+                    
                 </div>
                 
                 

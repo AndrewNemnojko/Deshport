@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Deshport.Domain.EntityModel;
+using Deshport.Domain.Response;
+using Deshport.Domain.ViewModel.Product;
 
 namespace Deshport.Service.Interfaces
 {
-    internal interface IProductService
+    public interface IProductService
     {
+        Task<BaseResponse<Product>> CreateProduct(ProductView product);
+        Task<BaseResponse<Product>> UpdateProduct(ProductView product);
+        Task<BaseResponse<bool>> Delete (ProductView product);
+        Task<BaseResponse<IEnumerable<Product>>> GetProducts();
     }
 }

@@ -11,7 +11,7 @@ namespace Deshport.Domain.Response
         public T Data { get; set; }
     }
     public interface IBaseResponse<T>
-    {
+    {       
         public Status StatusCode { get; }
         public T Data { get; }
     }

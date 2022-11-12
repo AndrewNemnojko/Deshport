@@ -2,6 +2,7 @@
 using Deshport.DAL.Repositories;
 using Deshport.Domain.EntityModel;
 using Deshport.Service.Interfaces;
+using Deshport.Service.Services;
 
 namespace Deshport
 {

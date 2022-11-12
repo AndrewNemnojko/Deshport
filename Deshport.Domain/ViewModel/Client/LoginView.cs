@@ -7,12 +7,12 @@ namespace Deshport.Domain.ViewModel.Client
     public class LoginView
     {
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Введите адрес электронной почты!")]
+        [Required(ErrorMessage = "Enter your email address!")]
         public string Mail { get; set; }
 
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Введите пароль")]
-        [MinLength(6, ErrorMessage = "Пароль должен содержать более 6ти символов")]
+        [Required(ErrorMessage = "Enter password")]
+        [MinLength(6, ErrorMessage = "Password must contain more than 6 characters")]
         public string Password { get; set; }
         
     }

@@ -6,28 +6,28 @@ namespace Deshport.Domain.ViewModel.Client
 {
     public class RegisterView
     {
-        [Required(ErrorMessage = "Введите имя")]
-        [MaxLength(15, ErrorMessage = "Имя должн быть длиной не более 15ти символов")]
-        [MinLength(4, ErrorMessage = "Имя не должно быть длиной менее 4ех символов")]
+        [Required(ErrorMessage = "Enter your name")]
+        [MaxLength(15, ErrorMessage = "The name must be no more than 15 characters long")]
+        [MinLength(3, ErrorMessage = "The name must not be less than 3 characters long")]
         public string FirstName { get; set; }
         
-        [Required(ErrorMessage = "Введите фамилию")]
-        [MaxLength(25, ErrorMessage = "Фамилия должна быть длиной не более 25ти символов")]
-        [MinLength(4, ErrorMessage = "Фамилия не должна быть длиной менее 4ех символов")]
+        [Required(ErrorMessage = "Enter last name")]
+        [MaxLength(25, ErrorMessage = "Last name must be no more than 25 characters long")]
+        [MinLength(4, ErrorMessage = "Last name must not be less than 4 characters long")]
         public string LastName { get; set; }
         
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Введите адрес электронной почты!")]
+        [Required(ErrorMessage = "Enter your email address!")]
         public string Mail { get; set; }
         
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Введите пароль")]
-        [MinLength(6, ErrorMessage = "Пароль должен содержать более 6ти символов")]
+        [Required(ErrorMessage = "Enter password")]
+        [MinLength(6, ErrorMessage = "Password must contain more than 6 characters")]
         public string Password { get; set; }
         
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Подтвердите пароль")]
-        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
+        [Required(ErrorMessage = "Confirm the password")]
+        [Compare("Password", ErrorMessage = "Passwords do not match")]
         public string PasswordConfirm { get; set; }
     }
 }
