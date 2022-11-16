@@ -1,23 +1,25 @@
 ﻿
 @model Deshport.Domain.ViewModel.Client.LoginView
+<link rel="stylesheet" href="~/css/formstyle.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-<div class="main_login_form">
+<div id="loginform" class="main_login_form col-lg-5 col-md-6 col-sm-8 col-xl-4 col-xxl-4">
     <div class="card-header">
-        <h3 class="mb-0 text-center ParagraphHome">Вход в аккаунт</h3>                            
+        <h3 class="mb-0 text-center ParagraphHome">Sign in</h3>                            
     </div>
     <div class="card-body">
         <form autocomplete="on" method="post" asp-controller="Auth" asp-action="Login">
-           <div asp-validation-summary="All" style="font-size:15px; class="text-danger text-center"></div>
+           <div asp-validation-summary="All" style="font-size:15px;" class="text-danger text-center"></div>
            <div class="form-group">
-                <input asp-for="Mail" placeholder="email" class="form-control textbox-dg font-weight-bold text-center" type="email">                                   
+                <input asp-for="Mail" placeholder="Email" class="form-control textbox-dg font-weight-bold text-center" type="email">                                   
            </div>
            <div class="form-group">
-               <input asp-for="Password" placeholder="surname" class="form-control textbox-dg font-weight-bold text-center" type="password">                                   
+               <input asp-for="Password" placeholder="Password" class="form-control textbox-dg font-weight-bold text-center" type="password">                                   
            </div>                               
            <div class="text-center"> 
-               <button class="btn btn-success  float-right m-1">Войти</button>
+               <button class="btn btn-success  float-right">Enter</button>
            </div>
-           <a asp-controller="Auth" asp-action="Register" class="float-end nav-link float-right">Регистрация</a>
+           <a asp-controller="Auth" asp-action="Register" class="float-end nav-link float-right">Register</a>
         </form>                        
     </div>                   
 </div>

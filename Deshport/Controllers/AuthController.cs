@@ -1,5 +1,4 @@
-﻿using Deshport.Domain.EntityModel;
-using Deshport.Domain.ViewModel.Client;
+﻿using Deshport.Domain.ViewModel.Client;
 using Deshport.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -10,8 +9,8 @@ namespace Deshport.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly IClientService clientService;
-        public AuthController(IClientService clientService)
+        private readonly IAuthService clientService;
+        public AuthController(IAuthService clientService)
         {
             this.clientService = clientService;
         }
@@ -31,7 +30,7 @@ namespace Deshport.Controllers
                         new ClaimsPrincipal(response.Data));
                     return RedirectToAction("Index", "Main");
                 }
-                ModelState.AddModelError("", response.Description); 
+                ModelState.AddModelError("",response.Description); 
             }
             return PartialView(model);
         }        

@@ -1,5 +1,4 @@
 ﻿
-
 using Deshport.Domain.Enum;
 
 namespace Deshport.Domain.Response

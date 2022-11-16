@@ -10,10 +10,10 @@ using System.Security.Claims;
 
 namespace Deshport.Service.Services
 {
-    public class ClientService : IClientService
+    public class AuthService : IAuthService
     {
         private readonly IBaseRepository<Client> clientRepos;
-        public ClientService(IBaseRepository<Client> clientRepos)
+        public AuthService(IBaseRepository<Client> clientRepos)
         {
             this.clientRepos = clientRepos;
         }
@@ -101,7 +101,7 @@ namespace Deshport.Service.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, client.Mail),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, client.Role.ToString())
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, client.Role.ToString()),               
             };
             return new ClaimsIdentity(claims, "ApplicationCookie",
                 ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);

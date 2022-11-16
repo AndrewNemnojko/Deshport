@@ -3,7 +3,7 @@
 }
 @if (User.IsInRole("User"))
 {
-    <h1>Hello User</h1>
+    <h1>Hello @User.Identity</h1>
 }
 
 

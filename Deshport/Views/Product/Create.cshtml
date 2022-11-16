@@ -1,0 +1,8 @@
+﻿@model Deshport.Domain.ViewModel.Product.ProductView
+
+<form asp-action="Create" asp-controller="Product" method="post">
+    <div asp-validation-summary="All" style="font-size:15px;" class="text-danger text-center"></div>
+    <input asp-for="@Model.Name" />
+    <input asp-for="@Model.Price" />    
+    <input type="submit" value="Create" />
+</form>

@@ -1,0 +1,21 @@
+﻿#loginform {
+    border-radius: 40px;
+    -webkit-box-shadow: 3px -2px 37px -6px rgba(153,153,153,1);
+    -moz-box-shadow: 3px -2px 37px -6px rgba(153,153,153,1);
+    box-shadow: 3px -2px 37px -6px rgba(153,153,153,1);
+    padding: 30px;    
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+}
+#loginform input{
+    margin: 3px;
+    border: none;
+}
+#loginform .btn{
+    margin-top: 25px;
+}
+#loginform .btn:hover {
+    
+    cursor: pointer;
+}

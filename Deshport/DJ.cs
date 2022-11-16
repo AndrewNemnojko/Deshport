@@ -15,7 +15,7 @@ namespace Deshport
         }
         public static void InitializeServices(this IServiceCollection services)
         {
-            services.AddScoped<IClientService, ClientService>();            
+            services.AddScoped<IAuthService, AuthService>();            
             services.AddScoped<IProductService, ProductService>();
         }
     }
