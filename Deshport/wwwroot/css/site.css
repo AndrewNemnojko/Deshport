@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  overflow: hidden
 }
 
 @media (min-width: 768px) {
@@ -12,8 +13,20 @@ html {
   position: relative;
   min-height: 100%;
 }
-
 body {
   margin-bottom: 60px;
 }
 
+body > header{
+    background-color: aqua;
+}
+table img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+#list_product{
+    height: 70rem;
+    background-color: papayawhip;
+    overflow-y:scroll;
+}

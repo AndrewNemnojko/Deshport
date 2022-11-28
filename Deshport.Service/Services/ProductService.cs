@@ -54,6 +54,22 @@ namespace Deshport.Service.Services
             }
         }
 
+        public async Task<BaseResponse<Product>> GetProductById(int id)
+        {
+            try
+            {
+                var _product = await productRepository.GetAll().FirstOrDefaultAsync(p => p.Id == id);
+                if(_product == null)
+                {
+                    return new BaseResponse<Product> { StatusCode = Domain.Enum.Status.Error, Description = "NULL" };
+                }
+                return new BaseResponse<Product> {StatusCode= Domain.Enum.Status.OK, Data = _product };
+            }catch (Exception ex){
+                return new BaseResponse<Product>
+                { StatusCode = Domain.Enum.Status.Error, Description = $"[CHANGE] : {ex.Message}" };
+            }
+        }
+
         public async Task<BaseResponse<IEnumerable<Product>>> GetProducts()
         {
             try
@@ -80,7 +96,11 @@ namespace Deshport.Service.Services
                 {
                     return new BaseResponse<Product> { StatusCode = Domain.Enum.Status.NonFound };
                 }
-                await productRepository.Change(_product);
+                _product.Price = product.Price;
+                _product.Name = product.Name;
+                _product.Picture = product.Picture;
+                _product.Amount = product.Amount;
+                await productRepository.Change(_product);               
                 return new BaseResponse<Product> { StatusCode = Domain.Enum.Status.OK, Data = _product };
             }catch(Exception ex)
             {

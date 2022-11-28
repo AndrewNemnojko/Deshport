@@ -1,0 +1,14 @@
+﻿@model Deshport.Domain.EntityModel.Product
+
+<form asp-action="ChangeProduct" asp-controller="Product" method="post">
+    <div asp-validation-summary="All" style="font-size:15px;" class="text-danger text-center"></div>
+    <label>Name</label>
+    <input placeholder="Name" asp-for="@Model.Name" />
+    <label>Picture</label>
+    <input placeholder="Picture" type="image" asp-for="@Model.Picture" />
+    <label>Price</label>
+    <input placeholder="Price" asp-for="@Model.Price" />  
+    <label>Amount</label>
+    <input placeholder="Amount" asp-for="@Model.Amount" />
+    <input type="submit" value="Confirm" />
+</form>

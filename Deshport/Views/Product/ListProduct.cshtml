@@ -1,0 +1,44 @@
+﻿@model List<Deshport.Domain.EntityModel.Product>
+
+@if(Model != null ){
+    <table class="col-12 table">
+        <tr class="table-secondary">
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>DateReg.</th>
+            <th></th>
+        </tr>        
+        @foreach(var prod in Model)
+        {
+            <tr>
+                <th>
+                    @if(@prod.Picture == null)
+                    {
+                        <img src="/images/default-thumbnail.jpg" />
+                    }
+                    else
+                    {
+                        <img archive="@prod.Picture" />
+                    }                   
+                </th>
+                <th>@prod.Name</th>
+                <th>@prod.Price</th>
+                <th>@prod.Amount</th>
+                <th>@prod.CreatedDate</th>
+                <th >
+                    <div class="d-flex flex-wrap">
+                        <a class="btn btn-info" asp-action="ChangeProduct" asp-route-id="@prod.Id"> Change </a>
+                        <form  asp-action="Delete" asp-route-id="@prod.Id"><input class="btn btn-danger" type="submit" value="Delete" /></form>
+                    </div>
+                    
+                </th>
+                
+            </tr>
+            
+        }
+    </table>
+}
+
+                

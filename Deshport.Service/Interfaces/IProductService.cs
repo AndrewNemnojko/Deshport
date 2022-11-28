@@ -10,5 +10,6 @@ namespace Deshport.Service.Interfaces
         Task<BaseResponse<Product>> UpdateProduct(Product product);
         Task<BaseResponse<bool>> Delete (int id);
         Task<BaseResponse<IEnumerable<Product>>> GetProducts();
+        Task<BaseResponse<Product>> GetProductById(int id);
     }
 }

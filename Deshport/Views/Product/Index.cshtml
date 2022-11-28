@@ -1,0 +1,31 @@
+﻿<div class="d-flex">    
+    <div class="col-12 ">
+        <blockquote class="col-12 justify-content-between">Product list <button class="btn btn-secondary rounded-3" id="refreshbtn">Refresh</button><a class="btn btn-success" asp-action="Create">Create</a></blockquote>       
+        <div id="list_product"></div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {     
+            $.ajax({
+                url: '@Url.Action("ListProduct", "Product")',
+                type: 'GET',
+                    success: function(res){
+                        $('#list_product').html(res)  
+                    }
+                })
+            $("#refreshbtn").on("click", function(e){
+                e.preventDefault();
+                $.ajax({
+                url: '@Url.Action("ListProduct", "Product")',
+                type: 'GET',
+                    success: function(res){
+                        $('#list_product').html(res)  
+                    }
+                })
+
+            })
+        });       
+    </script>
+}
