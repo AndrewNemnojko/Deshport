@@ -12,7 +12,7 @@
         </tr>        
         @foreach(var prod in Model)
         {
-            <tr>
+            <tr >
                 <th>
                     @if(@prod.Picture == null)
                     {
@@ -20,7 +20,7 @@
                     }
                     else
                     {
-                        <img archive="@prod.Picture" />
+                        <img src="@prod.Picture" />
                     }                   
                 </th>
                 <th>@prod.Name</th>
@@ -30,7 +30,7 @@
                 <th >
                     <div class="d-flex flex-wrap">
                         <a class="btn btn-info" asp-action="ChangeProduct" asp-route-id="@prod.Id"> Change </a>
-                        <form  asp-action="Delete" asp-route-id="@prod.Id"><input class="btn btn-danger" type="submit" value="Delete" /></form>
+                        <form onclick="return confirm(`Are you sure you want to delete @prod.Name?`)"  asp-action="Delete" asp-route-id="@prod.Id"><input class="btn btn-danger" type="submit" value="Delete" /></form>
                     </div>
                     
                 </th>

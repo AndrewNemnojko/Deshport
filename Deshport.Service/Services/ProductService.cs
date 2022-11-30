@@ -5,11 +5,14 @@ using Deshport.Domain.ViewModel.Product;
 using Deshport.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
+
+
 namespace Deshport.Service.Services
 {
     public class ProductService : IProductService
     {
         private readonly IBaseRepository<Product> productRepository;
+        
         public ProductService(IBaseRepository<Product> productRepository)
         {
             this.productRepository = productRepository;
@@ -27,6 +30,8 @@ namespace Deshport.Service.Services
                 {
                     Name = product.Name,
                     Price = product.Price,
+                    Amount = product.Amount,
+                    Picture = product.Picture,
                     CreatedDate = DateTime.Now,
                 };
                 await productRepository.Create(result);
@@ -87,7 +92,7 @@ namespace Deshport.Service.Services
             }
 
         }
-        public async Task<BaseResponse<Product>> UpdateProduct(Product product)
+        public async Task<BaseResponse<Product>> UpdateProduct(ProductView product)
         {
             try
             {
@@ -97,8 +102,7 @@ namespace Deshport.Service.Services
                     return new BaseResponse<Product> { StatusCode = Domain.Enum.Status.NonFound };
                 }
                 _product.Price = product.Price;
-                _product.Name = product.Name;
-                _product.Picture = product.Picture;
+                _product.Name = product.Name;                
                 _product.Amount = product.Amount;
                 await productRepository.Change(_product);               
                 return new BaseResponse<Product> { StatusCode = Domain.Enum.Status.OK, Data = _product };

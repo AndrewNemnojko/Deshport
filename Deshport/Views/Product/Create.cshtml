@@ -1,8 +1,28 @@
 ﻿@model Deshport.Domain.ViewModel.Product.ProductView
-
-<form asp-action="Create" asp-controller="Product" method="post">
+<h4>Create form</h4>
+<form id="formchangeproduct" enctype="multipart/form-data"  asp-action="Create" asp-controller="Product" method="post">
     <div asp-validation-summary="All" style="font-size:15px;" class="text-danger text-center"></div>
-    <input asp-for="@Model.Name" />
-    <input asp-for="@Model.Price" />    
-    <input type="submit" value="Create" />
+    <div class="image-area col-3"> 
+        <img class="col-12" src="~/images/default-thumbnail.jpg" />
+        <input value="Change picture" placeholder="Picture" type="file" asp-for="@Model.Imagefile" />
+    </div>
+    <div class="param-area col-9">
+        <div>
+            <label class="col-3">Name</label>
+            <input class="col-8" placeholder="Name" asp-for="@Model.Name" />
+        </div>
+        <div>
+            <label class="col-3">Price</label>
+            <input class="col-8" placeholder="Price" asp-for="@Model.Price" />  
+        </div>   
+        <div>
+            <label class="col-3">Amount</label>
+            <input class="col-8" placeholder="Amount" asp-for="@Model.Amount" />
+        </div>       
+        
+    </div>
+    
+        <input id="confirm-change" type="submit" value="Create" />
+    
+    
 </form>

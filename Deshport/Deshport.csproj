@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -18,6 +18,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Deshport.DAL\Deshport.DAL.csproj" />
     <ProjectReference Include="..\Deshport.Service\Deshport.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\resources\simpleprod\" />
   </ItemGroup>
 
 </Project>

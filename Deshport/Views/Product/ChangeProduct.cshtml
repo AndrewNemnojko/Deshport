@@ -1,14 +1,29 @@
 ﻿@model Deshport.Domain.EntityModel.Product
-
-<form asp-action="ChangeProduct" asp-controller="Product" method="post">
+<h4>Change form</h4>
+<form id="formchangeproduct" enctype="multipart/form-data" asp-action="ChangeProduct" asp-controller="Product" asp-route-id="@Model.Id" method="post">
     <div asp-validation-summary="All" style="font-size:15px;" class="text-danger text-center"></div>
-    <label>Name</label>
-    <input placeholder="Name" asp-for="@Model.Name" />
-    <label>Picture</label>
-    <input placeholder="Picture" type="image" asp-for="@Model.Picture" />
-    <label>Price</label>
-    <input placeholder="Price" asp-for="@Model.Price" />  
-    <label>Amount</label>
-    <input placeholder="Amount" asp-for="@Model.Amount" />
-    <input type="submit" value="Confirm" />
+    <div class="image-area col-3">
+        <img src="/@Model.Picture" />
+        
+        <input value="Change picture" placeholder="Picture" type="file" asp-for="@Model.Picture" />
+    </div>
+    <div class="param-area col-9">
+        <div>
+            <label class="col-3">Name</label>
+            <input class="col-8" placeholder="Name" asp-for="@Model.Name" />
+        </div>
+        <div>
+            <label class="col-3">Price</label>
+            <input class="col-8" placeholder="Price" asp-for="@Model.Price" />  
+        </div>   
+        <div>
+            <label class="col-3">Amount</label>
+            <input class="col-8" placeholder="Amount" asp-for="@Model.Amount" />
+        </div>       
+        
+    </div>
+    
+        <input id="confirm-change" type="submit" value="Confirm" />
+    
+    
 </form>

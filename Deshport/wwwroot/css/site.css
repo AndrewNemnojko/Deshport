@@ -24,9 +24,46 @@ table img{
     width: 70px;
     height: 70px;
     object-fit: cover;
+    border-radius: 10px;
 }
 #list_product{
     height: 70rem;
     background-color: papayawhip;
     overflow-y:scroll;
+}
+#formchangeproduct{
+    display: flex;
+    position: relative;
+    background-color: darkslategrey;
+    padding: 0.5rem;
+
+}
+#formchangeproduct .image-area img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+#formchangeproduct .image-area input{
+    width: 100%;
+    text-align:center;
+    background-color:antiquewhite;
+    color:black;
+    font-weight: 600;
+}
+#confirm-change{
+    position: absolute;
+    padding: 3px;
+    width: 200px;
+    bottom: -30px;
+    right: 0px;
+}
+#formchangeproduct .param-area div label {
+    text-align: center;
+    padding: 5px;
+    background-color: dimgray;
+}
+#formchangeproduct .param-area div input{
+    padding:5px;
+    margin-bottom: 2px;
+    border: none;
 }
